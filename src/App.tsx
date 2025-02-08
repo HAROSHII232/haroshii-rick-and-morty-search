@@ -8,10 +8,12 @@ import SearchBar from "./components/SearchBar/SearchBar";
 function App() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const handleSearch = async (query: string) => {
     if (query.length <= 2) {
       setCharacters([]);
+      setError("");
       return;
     }
 
@@ -22,21 +24,22 @@ function App() {
       const response = await axios.get(
         `https://rickandmortyapi.com/api/character/?name=${query}`
       );
+      setError("");
       setCharacters(response.data.results);
     } catch (error: any) {
-      console.error("Error fetching data:", error.response.data.error);
+      setError(error.response.data.error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div>
+    <>
       <SearchBar onSearch={handleSearch} foundCount={characters.length} />
       <div>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
+        {loading && <p>Loading...</p>}
+        {error && <p>{error}</p>}
+        {characters && (
           <div>
             {characters.map((character) => (
               <CharacterCard key={character.id} character={character} />
@@ -44,7 +47,7 @@ function App() {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
 
