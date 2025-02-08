@@ -1,0 +1,41 @@
+.card {
+
+  border-radius: 8px;
+
+  margin: 10px;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+
+}
+
+.name {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.status {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.alive {
+  color: green;
+}
+
+.dead {
+  color: red;
+}
+
+.created {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.foundCharacters {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+}
