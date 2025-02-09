@@ -10,11 +10,11 @@ type Props = {
 
 function CharacterList({ characters, error, loading }: Props) {
   return (
-    <div className={styles.characterList}>
+    <div>
       {error && <p>{error}</p>}
       {loading && <p>Loading...</p>}
       {characters && (
-        <div>
+        <div className={styles.characterList}>
           {characters.map((character) => (
             <CharacterCard key={character.id} character={character} />
           ))}

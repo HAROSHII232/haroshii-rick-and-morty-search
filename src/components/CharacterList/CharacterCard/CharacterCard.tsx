@@ -9,7 +9,9 @@ type Props = {
 
 const CharacterCard = ({ character }: Props) => {
   const statusColor =
-    character.status.toLowerCase() === "alive" ? styles.alive : styles.dead;
+  character.status.toLowerCase() === "alive" ? styles.alive :
+  character.status.toLowerCase() === "dead" ? styles.dead :
+  styles.unknown;
 
   return (
     <a
@@ -19,10 +21,14 @@ const CharacterCard = ({ character }: Props) => {
       rel="noreferrer"
     >
       <h3 className={styles.name}>{character.name}</h3>
-      <p className={`${styles.status}`}>
-        Status: <span className={`${statusColor}`}>{character.status}</span>
-      </p>
-      <p className={styles.created}>Created: {formatDate(character.created)}</p>
+      <div className={styles.footer}>
+        <span className={`${styles.status}`}>
+          Status: <span className={`${statusColor}`}>{character.status}</span>
+        </span>
+        <span className={styles.created}>
+          Created: {formatDate(character.created)}
+        </span>
+      </div>
     </a>
   );
 };
