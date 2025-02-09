@@ -1,7 +1,18 @@
 .characterList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+}
+
+@media (max-width: 1200px) {
+  .characterList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .characterList {
+    grid-template-columns: 1fr;
+  }
 }

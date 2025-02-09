@@ -10,7 +10,7 @@ type Props = {
 
 function CharacterList({ characters, error, loading }: Props) {
   return (
-    <div>
+    <>
       {error && <p>{error}</p>}
       {loading && <p>Loading...</p>}
       {characters && (
@@ -20,7 +20,7 @@ function CharacterList({ characters, error, loading }: Props) {
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 }
 
