@@ -4,6 +4,7 @@ import "./App.css";
 import CharacterCard from "./components/Character/CharacterCard";
 import { Character } from "./components/Character/CharacterCard.types";
 import SearchBar from "./components/SearchBar/SearchBar";
+import "./App.css";
 
 function App() {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -34,7 +35,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="container">
       <SearchBar onSearch={handleSearch} foundCount={characters.length} />
       <div>
         {loading && <p>Loading...</p>}
@@ -47,7 +48,7 @@ function App() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

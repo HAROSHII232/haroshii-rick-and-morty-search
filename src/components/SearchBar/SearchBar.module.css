@@ -1,9 +1,29 @@
 .input {
-  padding: 10px;
-  font-size: 16px;
-  width: calc(100% - 20px);
-  max-width: 600px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 20px 25px;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.65;
+  color: #656EC2;
+  border: none;
+
+  width: 100%;
+  min-width: 300px;
+  max-width: 625px;
+  margin-bottom: 13px;
+  box-shadow: 0px 7px 12px 0px #64646F33;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.65;
+  color: #656EC2;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0px 7px 12px 0px #656ec26b;
 }

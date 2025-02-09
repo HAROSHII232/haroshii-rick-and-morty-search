@@ -19,12 +19,13 @@ const SearchBar = ({ onSearch, foundCount }: Props) => {
   };
 
   return (
-    <div>
+    <>
       <input
         type="text"
         value={query}
         onChange={handleInputChange}
         placeholder="Search characters..."
+        className={styles.input}
         autoFocus
       />
       {query && query.length < 3 ? (
@@ -38,7 +39,7 @@ const SearchBar = ({ onSearch, foundCount }: Props) => {
           </p>
         )
       )}
-    </div>
+    </>
   );
 };
 
