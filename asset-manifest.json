@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/haroshii-rick-and-morty-search/static/css/main.7fe94392.css",
+    "main.js": "/haroshii-rick-and-morty-search/static/js/main.5e23f44a.js",
+    "static/js/453.13f15391.chunk.js": "/haroshii-rick-and-morty-search/static/js/453.13f15391.chunk.js",
+    "index.html": "/haroshii-rick-and-morty-search/index.html",
+    "main.7fe94392.css.map": "/haroshii-rick-and-morty-search/static/css/main.7fe94392.css.map",
+    "main.5e23f44a.js.map": "/haroshii-rick-and-morty-search/static/js/main.5e23f44a.js.map",
+    "453.13f15391.chunk.js.map": "/haroshii-rick-and-morty-search/static/js/453.13f15391.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7fe94392.css",
+    "static/js/main.5e23f44a.js"
+  ]
+}
