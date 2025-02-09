@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
-import CharacterCard from "./components/Character/CharacterCard";
-import { Character } from "./components/Character/CharacterCard.types";
+import { Character } from "./components/CharacterList/CharacterCard/CharacterCard.types";
+import CharacterList from "./components/CharacterList/CharacterList";
 import SearchBar from "./components/SearchBar/SearchBar";
-import "./App.css";
+import FoundCharactersCount from "./components/CharacterList/FoundCharactersCount/FoundCharactersCount";
 
 function App() {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -22,10 +22,10 @@ function App() {
 
     try {
       setCharacters([]);
+      setError("");
       const response = await axios.get(
         `https://rickandmortyapi.com/api/character/?name=${query}`
       );
-      setError("");
       setCharacters(response.data.results);
     } catch (error: any) {
       setError(error.response.data.error);
@@ -36,18 +36,11 @@ function App() {
 
   return (
     <div className="container">
-      <SearchBar onSearch={handleSearch} foundCount={characters.length} />
-      <div>
-        {loading && <p>Loading...</p>}
-        {error && <p>{error}</p>}
-        {characters && (
-          <div>
-            {characters.map((character) => (
-              <CharacterCard key={character.id} character={character} />
-            ))}
-          </div>
-        )}
-      </div>
+      <SearchBar onSearch={handleSearch} />
+      {characters.length !== 0 && (
+        <FoundCharactersCount foundCharacters={characters.length} />
+      )}
+      <CharacterList characters={characters} loading={loading} error={error} />
     </div>
   );
 }

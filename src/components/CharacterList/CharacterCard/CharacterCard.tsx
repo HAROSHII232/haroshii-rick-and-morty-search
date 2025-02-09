@@ -1,6 +1,6 @@
 import { Character } from "./CharacterCard.types";
 import styles from "./CharacterCard.module.css";
-import { formatDate } from "../../utils/formatDate";
+import { formatDate } from "../../../utils/formatDate";
 
 type Props = {
   character: Character;

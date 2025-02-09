@@ -3,10 +3,9 @@ import styles from "./SearchBar.module.css";
 
 type Props = {
   onSearch: (query: string) => void;
-  foundCount: number;
 };
 
-const SearchBar = ({ onSearch, foundCount }: Props) => {
+const SearchBar = ({ onSearch }: Props) => {
   const [query, setQuery] = useState("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,17 +27,6 @@ const SearchBar = ({ onSearch, foundCount }: Props) => {
         className={styles.input}
         autoFocus
       />
-      {query && query.length < 3 ? (
-        <p className={styles.errorMessage}>
-          Please enter more than 3 characters
-        </p>
-      ) : (
-        query && (
-          <p className={styles.foundCharacters}>
-            Found characters: {foundCount}
-          </p>
-        )
-      )}
     </>
   );
 };
