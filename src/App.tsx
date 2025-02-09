@@ -5,11 +5,11 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import useCharacterSearch from "./hooks/useCharacterSearch";
 
 function App() {
-  const { characters, loading, error, handleSearch } = useCharacterSearch();
+  const { characters, loading, error, setQuery } = useCharacterSearch();
 
   return (
     <div className="container">
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={setQuery} />
       {characters.length !== 0 && (
         <FoundCharactersCount foundCharacters={characters.length} />
       )}
