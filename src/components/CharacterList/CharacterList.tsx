@@ -11,8 +11,8 @@ type Props = {
 function CharacterList({ characters, error, loading }: Props) {
   return (
     <>
-      {error && <p>{error}</p>}
-      {loading && <p>Loading...</p>}
+      {error && <span>{error}</span>}
+      {loading && <span>Loading...</span>}
       {characters && (
         <div className={styles.characterList}>
           {characters.map((character) => (
